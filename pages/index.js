@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
       <Contact />
     </>
