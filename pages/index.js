@@ -6,6 +6,11 @@ import Contact from '../components/Contact'
 
 export default function Home() {
   return (
-    <Contact />
+    <>
+      <Head>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+      </Head>
+      <Contact />
+    </>
   )
 }
