@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  const restApiKey = ZmE0MGNiYzUtYjljMC00YzFlLTgyZTAtYjhjNzUyYzMyYmJi;
 
   useEffect(() => {
     window.OneSignal = window.OneSignal || [];
