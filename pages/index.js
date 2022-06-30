@@ -28,10 +28,10 @@ export default function Home() {
       //app_id: "ed203017-82b0-43f9-ac75-e39079746cb5", //개발서버
       app_id: "516b2e1c-1f27-4c68-b639-b2d82617d697", //실서버
       //included_segments: ['Subscribed Users'],
-      contents: {en: 'English or Any Language Message', es: 'Spanish Message'},
+      contents: {en: 'What cystal! :)', es: 'Spanish Message'},
       name: 'api로 만드는',
       //include_external_user_ids  : ['fede4cda-2ac2-48e3-b538-710ec1e3e4b2'] //개발서버
-      include_external_user_ids  : ['1aaef197-2921-4d64-9b30-ad1c0d4bff88	'] //실서버
+      include_external_user_ids  : ['1aaef197-2921-4d64-9b30-ad1c0d4bff88'] //실서버
     })
   };
 
