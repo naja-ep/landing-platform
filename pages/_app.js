@@ -3,6 +3,9 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
 
+
+
+
   useEffect(() => {
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function() {
@@ -18,14 +21,14 @@ function MyApp({ Component, pageProps }) {
         },
         notifyButton: {
           enable: true,
-          size: "medium", //large, medium, small
-          position: "bottom-right", //bottom-left, bottom-right(default)
+          size: "medium", //버튼사이즈 : large, medium(기본값), small(활성화되었을 경우의 기본값)
+          position: "bottom-right", //버튼 위치 : bottom-left, bottom-right(기본값)
         },
         allowLocalhostAsSecureOrigin: true,
       })
       OneSignal.push(["getNotificationPermission", function(permission) {
         console.log("Site Notification Permission:", permission);
-        // (Output) Site Notification Permission: default
+        // 사이트에서 알림을 허용하는지 여부: default(기본값), denied(차단됨), granted(허용함)
       }]);
       OneSignal.getUserId().then(function(userId){ //userId 가져오기
         if(userId == null){
@@ -40,14 +43,16 @@ function MyApp({ Component, pageProps }) {
           });
         }
       })
-
-
     });
 
     return () => {
         window.OneSignal = undefined;
     };
-}, []); // <-- run this effect once on mount
+  }, []); // <-- run this effect once on mount
+
+
+
+
 
   return <Component {...pageProps} />
 }
