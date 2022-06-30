@@ -9,36 +9,6 @@ import Contact from '../components/Contact'
 
 export default function Home() {
 
-  // 220630 발급 User Auth Key : YWI3YTM0MDAtNjBmZC00ZGQ1LWIwYzUtODY3NjUyNzJkNzc5
-  
-  //220630 발급 실서버 Rest api key : NGE1Zjk1MDAtZGUyYS00OGExLTg4YWItZGQ2NDJhZGFkOGFj
-  // 220629 발급 개발서버 Rest api key : ZmE0MGNiYzUtYjljMC00YzFlLTgyZTAtYjhjNzUyYzMyYmJi
-  
-  //const appId = "ed203017-82b0-43f9-ac75-e39079746cb5" //개발서버
-  //const appId = "516b2e1c-1f27-4c68-b639-b2d82617d697" //실서버
-
-  const options = {
-    method: 'POST',
-    headers: {
-      Accept: 'text/plain',
-      Authorization: 'Basic NGE1Zjk1MDAtZGUyYS00OGExLTg4YWItZGQ2NDJhZGFkOGFj',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      //app_id: "ed203017-82b0-43f9-ac75-e39079746cb5", //개발서버
-      app_id: "516b2e1c-1f27-4c68-b639-b2d82617d697", //실서버
-      //included_segments: ['Subscribed Users'],
-      contents: {en: 'What cystal! :)', es: 'Spanish Message'},
-      name: 'api로 만드는',
-      //include_external_user_ids  : ['fede4cda-2ac2-48e3-b538-710ec1e3e4b2'] //개발서버
-      include_external_user_ids  : ['1aaef197-2921-4d64-9b30-ad1c0d4bff88'] //실서버
-    })
-  };
-
-  fetch('https://onesignal.com/api/v1/notifications', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
 
   return (
     <>
