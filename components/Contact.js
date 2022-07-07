@@ -72,6 +72,7 @@ const Contact = () => {
       setExternalUserId(externalUserId);
       SendPushHello(externalUserId);
       console.log(externalUserId)
+      // @@@@@@@@@@ 수정씨 컴퓨터에서 external user id를 가져오지 못함 @@@@@@@@@@
       
     });
   }
