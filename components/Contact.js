@@ -92,8 +92,8 @@ const Contact = () => {
         method: 'POST',
         headers: {
           Accept: 'text/plain',
-          Authorization: 'Basic ZmE0MGNiYzUtYjljMC00YzFlLTgyZTAtYjhjNzUyYzMyYmJi', //개발서버
-          //Authorization: 'Basic NGE1Zjk1MDAtZGUyYS00OGExLTg4YWItZGQ2NDJhZGFkOGFj', //실서버
+          //Authorization: 'Basic ZmE0MGNiYzUtYjljMC00YzFlLTgyZTAtYjhjNzUyYzMyYmJi', //개발서버
+          Authorization: 'Basic NGE1Zjk1MDAtZGUyYS00OGExLTg4YWItZGQ2NDJhZGFkOGFj', //실서버
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
