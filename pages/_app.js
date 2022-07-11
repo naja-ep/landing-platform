@@ -1,14 +1,31 @@
 import { useEffect } from 'react';
 import '../styles/globals.css'
 
+
+
+//external user id 난수화
+function randomDigitCharacterslength(lenth){
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for( var i=0; i < lenth; i++ )
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  return text;
+}
+
+
+
+
+
 function MyApp({ Component, pageProps }) {
 
+  
+  
   useEffect(() => {
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function() {
       OneSignal.init({
-        appId: "516b2e1c-1f27-4c68-b639-b2d82617d697", //실서버
-        //appId: "ed203017-82b0-43f9-ac75-e39079746cb5", //개발서버
+        //appId: "516b2e1c-1f27-4c68-b639-b2d82617d697", //실서버
+        appId: "ed203017-82b0-43f9-ac75-e39079746cb5", //개발서버
         safari_web_id: "",
         subdomainName: "당신의 서브도메인 여기에",
         welcomeNotification : {
@@ -22,7 +39,23 @@ function MyApp({ Component, pageProps }) {
           position: "bottom-right", //버튼 위치 : bottom-left, bottom-right(기본값)
         },
         allowLocalhostAsSecureOrigin: true,
-      })
+      });
+
+
+      OneSignal.getExternalUserId().then(function(externalUserId){
+        //setExternalUserId(externalUserId);
+        //SendPushHello(externalUserId);
+        if(externalUserId == null || externalUserId == undefined ){
+          console.log('없을때: '+externalUserId);
+          const ramdonText = randomDigitCharacterslength(5);
+          const newExternalUserId = ramdonText;
+          console.log('new:' + newExternalUserId)
+          OneSignal.setExternalUserId(newExternalUserId);
+        } else {
+          console.log('있을때: '+externalUserId);
+        }
+      });
+
     });
 
     return () => {
